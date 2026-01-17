@@ -46,7 +46,21 @@ const translations = {
     presetBalanced: "Balanced (30/30/40)",
     presetHighProtein: "High protein (40/30/30)",
     presetLowCarb: "Low carb (30/35/35)",
-    presetKeto: "Keto (20/70/10)"
+    presetKeto: "Keto (20/70/10)",
+    formulaTitle: "How calculations work",
+    formulaBMR: "BMR (Mifflin–St Jeor):",
+    formulaBMRMale: "Men: BMR = 10×weight + 6.25×height – 5×age + 5",
+    formulaBMRFemale: "Women: BMR = 10×weight + 6.25×height – 5×age – 161",
+    formulaTDEE: "TDEE = BMR × activity factor",
+    formulaTarget: "Daily target = TDEE × goal modifier",
+    formulaMacros: "Calories per macronutrient:",
+    formulaProteinKcal: "Protein kcal = Target × (Protein% ÷ 100)",
+    formulaFatKcal: "Fat kcal = Target × (Fat% ÷ 100)",
+    formulaCarbKcal: "Carb kcal = Target × (Carb% ÷ 100)",
+    formulaGrams: "Grams per macronutrient:",
+    formulaProteinG: "Protein g = Protein kcal ÷ 4",
+    formulaFatG: "Fat g = Fat kcal ÷ 9",
+    formulaCarbG: "Carb g = Carb kcal ÷ 4"
   },
 
   lv: {
@@ -96,7 +110,21 @@ const translations = {
     presetBalanced: "Sabalansēts (30/30/40)",
     presetHighProtein: "Augsts proteīns (40/30/30)",
     presetLowCarb: "Maz ogļhidrātu (30/35/35)",
-    presetKeto: "Keto (20/70/10)"
+    presetKeto: "Keto (20/70/10)",
+    formulaTitle: "Kā notiek aprēķini",
+    formulaBMR: "BMR (Mifflin–St Jeor):",
+    formulaBMRMale: "Vīrieši: BMR = 10×svars + 6.25×garums – 5×vecums + 5",
+    formulaBMRFemale: "Sievietes: BMR = 10×svars + 6.25×garums – 5×vecums – 161",
+    formulaTDEE: "TDEE = BMR × aktivitātes koeficients",
+    formulaTarget: "Dienas mērķis = TDEE × mērķa koeficients",
+    formulaMacros: "Kalorijas pēc makroelementiem:",
+    formulaProteinKcal: "Olbaltumvielu kcal = Mērķis × (Olb.% ÷ 100)",
+    formulaFatKcal: "Tauku kcal = Mērķis × (Tauk.% ÷ 100)",
+    formulaCarbKcal: "Ogļhidrātu kcal = Mērķis × (Ogļh.% ÷ 100)",
+    formulaGrams: "Grami pēc makroelementiem:",
+    formulaProteinG: "Olbaltumvielas g = Olb. kcal ÷ 4",
+    formulaFatG: "Tauki g = Tauk. kcal ÷ 9",
+    formulaCarbG: "Ogļhidrāti g = Ogļh. kcal ÷ 4"
   }
 };
 
@@ -109,6 +137,22 @@ function applyLanguage(lang) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+
+  const accordionHeader = document.querySelector(".accordion-header");
+  const accordionContent = document.querySelector(".accordion-content");
+  
+  accordionHeader.addEventListener("click", () => {
+    const isOpen = accordionContent.style.maxHeight;
+  
+    if (isOpen) {
+      accordionContent.style.maxHeight = null;
+      accordionContent.classList.remove("open");
+    } else {
+      accordionContent.style.maxHeight = accordionContent.scrollHeight + "px";
+      accordionContent.classList.add("open");
+    }
+  });
+
 
   document.getElementById("langEN").addEventListener("click", () => applyLanguage("en"));
   document.getElementById("langLV").addEventListener("click", () => applyLanguage("lv"));
