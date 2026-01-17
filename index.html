@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-i18n="title">Macronutrient Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+
+    <div class="language">
+        <button id="langEN">EN</button>
+        <button id="langLV">LV</button>
+    </div>
+
+    <div class="pamats">
+        <h1 data-i18n="title">Macronutrient Calculator</h1>
+
+        <div class="apaksteksts" data-i18n="subtitle">
+            Estimate calories (TDEE) and split them into protein, fats, and carbs. All in one page, no tracking required.
+        </div>
+
+        <div class="pamats2">
+            <div class="info">
+
+                <h2 data-i18n="yourDetails">Your details</h2>
+
+                <label for="dzimte" data-i18n="sex">Sex</label>
+                <select id="dzimte">
+                    <option value="male" data-i18n="male">Male</option>
+                    <option value="female" data-i18n="female">Female</option>
+                </select>
+
+                <label for="vecums" data-i18n="age">Age</label>
+                <input id="vecums" type="number" value="0" />
+
+                <label for="svars" data-i18n="weight">Weight (kg)</label>
+                <input id="svars" type="number" value="0" />
+
+                <label for="garums" data-i18n="height">Height (cm)</label>
+                <input id="garums" type="number" value="0" />
+
+                <label for="aktivitate" data-i18n="activity">Activity level</label>
+                <select id="aktivitate">
+                    <option value="sedentary" data-i18n="act1">Sedentary (little or no exercise)</option>
+                    <option value="light" data-i18n="act2">Light exercise (1–3 days/week)</option>
+                    <option value="moderate" data-i18n="act3">Moderate exercise (3–5 days/week)</option>
+                    <option value="heavy" data-i18n="act4">Heavy exercise (6–7 days/week)</option>
+                    <option value="athlete" data-i18n="act5">Athlete (twice per day)</option>
+                </select>
+
+                <h2 data-i18n="goalHeader">Goal</h2>
+
+                <label for="merkis" data-i18n="target">Target</label>
+                <select id="merkis">
+                    <option value="goal1" data-i18n="goal1">Maximum fat loss (-20%)</option>
+                    <option value="goal2" data-i18n="goal2">Fat loss (-10%)</option>
+                    <option value="goal3" data-i18n="goal3">Maintain (0%)</option>
+                    <option value="goal4" data-i18n="goal4">Gain (+10%)</option>
+                    <option value="goal5" data-i18n="goal5">Gain a lot (+20%)</option>
+                </select>
+
+                <h2 data-i18n="macroMethod">Macronutrient method</h2>
+
+                <label for="sort" data-i18n="sort">Sort</label>
+                <select id="sort">
+                    <option value="percent" data-i18n="sortPercent">By percentages (P/F/C)</option>
+                </select>
+
+                <label for="protein" data-i18n="protein">Protein %</label>
+                <input id="protein" type="number" value="0" />
+
+                <label for="fat" data-i18n="fat">Fat %</label>
+                <input id="fat" type="number" value="0" />
+
+                <label for="carb" data-i18n="carb">Carb %</label>
+                <input id="carb" type="number" value="0" />
+
+                <button data-i18n="calculate">Calculate</button>
+                <button data-i18n="reset">Reset</button>
+            </div>
+
+            <div>
+                <div class="stats">
+                    <div class="stat-box">
+                        <span data-i18n="tdee">TDEE (est.)</span><br>
+                        <strong id="tdeeValue">0 kcal</strong>
+                    </div>
+                    <div class="stat-box">
+                        <span data-i18n="dailyTarget">Daily target</span><br>
+                        <strong id="targetValue">0 kcal</strong>
+                    </div>
+                    <div class="stat-box">
+                        <span data-i18n="bmr">BMR</span><br>
+                        <strong id="bmrValue">0 kcal</strong>
+                    </div>
+                </div>
+
+                <div class="pie"></div>
+
+                <table>
+                    <tr>
+                        <th data-i18n="macro">Macronutrient</th>
+                        <th data-i18n="grams">Grams / day</th>
+                        <th data-i18n="calories">Calories</th>
+                        <th data-i18n="percent">Percent</th>
+                    </tr>
+                    <tr>
+                        <td data-i18n="protein">Protein</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0%</td>
+                    </tr>
+                    <tr>
+                        <td data-i18n="fat">Fat</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0%</td>
+                    </tr>
+                    <tr>
+                        <td data-i18n="carb">Carbohydrate</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0%</td>
+                    </tr>
+                    <tr>
+                        <th data-i18n="total">Total</th>
+                        <th>0</th>
+                        <th>0</th>
+                        <th>0%</th>
+                    </tr>
+                </table>
+
+                <div class="footer-note" data-i18n="footerNote">
+                    Protein and carbohydrates = 4 kcal/g, fat = 9 kcal/g.
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
