@@ -66,7 +66,7 @@ select {
 }
 
 button {
-  background: #3c63ff;
+  background: #91802a;
   border: none;
   padding: 12px 20px;
   border-radius: 6px;
@@ -76,7 +76,7 @@ button {
 }
 
 button:hover {
-  background: #5c7aff;
+  background: #2bdc7b;
 }
 
 .reset {
@@ -127,3 +127,51 @@ th, td {
   opacity: 0.6;
   font-size: 14px;
 }
+
+
+@media (max-width: 768px) {
+
+  .pamats2 {
+    grid-template-columns: 1fr;
+  }
+
+  input,
+  select {
+    width: 100%;
+  }
+
+  .button-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .pogas {
+    width: 100%;
+    text-align: center;
+  }
+
+  .stats {
+    flex-direction: column;
+  }
+
+  .pie {
+    width: 200px;
+    height: 200px;
+  }
+
+  table th,
+  table td {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .info {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+}
+

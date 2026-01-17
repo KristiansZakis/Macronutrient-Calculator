@@ -33,13 +33,13 @@
                 </select>
 
                 <label for="vecums" data-i18n="age">Age</label>
-                <input id="vecums" type="number" value="0" />
+                <input id="vecums" type="number" value="18" />
 
                 <label for="svars" data-i18n="weight">Weight (kg)</label>
-                <input id="svars" type="number" value="0" />
+                <input id="svars" type="number" value="182" />
 
                 <label for="garums" data-i18n="height">Height (cm)</label>
-                <input id="garums" type="number" value="0" />
+                <input id="garums" type="number" value="70" />
 
                 <label for="aktivitate" data-i18n="activity">Activity level</label>
                 <select id="aktivitate">
@@ -66,7 +66,19 @@
                 <label for="sort" data-i18n="sort">Sort</label>
                 <select id="sort">
                     <option value="percent" data-i18n="sortPercent">By percentages (P/F/C)</option>
+                    <option value="preset" data-i18n="sortPreset">By preset templates</option>
                 </select>
+                
+                <div id="presetContainer">
+                    <label for="presetSelect" data-i18n="presetLabel">Preset</label>
+                    <select id="presetSelect">
+                        <option value="balanced" data-i18n="presetBalanced">Balanced (30/30/40)</option>
+                        <option value="highProtein" data-i18n="presetHighProtein">High protein (40/30/30)</option>
+                        <option value="lowCarb" data-i18n="presetLowCarb">Low carb (30/35/35)</option>
+                        <option value="keto" data-i18n="presetKeto">Keto (20/70/10)</option>
+                    </select>
+                </div>
+
 
                 <label for="protein" data-i18n="protein">Protein %</label>
                 <input id="protein" type="number" value="0" />
@@ -132,7 +144,7 @@
                     </tr>
                 </table>
 
-                <div class="footer-note" data-i18n="footerNote">
+                <div class="footer" data-i18n="footer">
                     Protein and carbohydrates = 4 kcal/g, fat = 9 kcal/g.
                 </div>
             </div>

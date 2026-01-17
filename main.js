@@ -1,6 +1,3 @@
-// =========================
-//  TRANSLATIONS
-// =========================
 const translations = {
   en: {
     title: "Macronutrient Calculator",
@@ -28,6 +25,7 @@ const translations = {
     macroMethod: "Macronutrient method",
     sort: "Sort",
     sortPercent: "By percentages (P/F/C)",
+    sortPreset: "By preset templates",
     protein: "Protein %",
     fat: "Fat %",
     carb: "Carb %",
@@ -41,9 +39,14 @@ const translations = {
     calories: "Calories",
     percent: "Percent",
     total: "Total",
-    footerNote: "Protein and carbohydrates = 4 kcal/g, fat = 9 kcal/g.",
+    footer: "Protein and carbohydrates = 4 kcal/g, fat = 9 kcal/g.",
     errorInputs: "Enter age, weight, height",
-    errorMacro: "Sum must be 100%. Now:"
+    errorMacro: "Sum must be 100%. Now:",
+    presetLabel: "Preset",
+    presetBalanced: "Balanced (30/30/40)",
+    presetHighProtein: "High protein (40/30/30)",
+    presetLowCarb: "Low carb (30/35/35)",
+    presetKeto: "Keto (20/70/10)"
   },
 
   lv: {
@@ -64,7 +67,7 @@ const translations = {
     act5: "Sportists (2 reizes dienā)",
     goalHeader: "Mērķis",
     target: "Mērķis",
-    goal1: "Maksimāls tauku zūdums (-20%)",
+    goal1: "Maksimāls tauku zudums (-20%)",
     goal2: "Tauku zudums (-10%)",
     goal3: "Uzturēt (0%)",
     goal4: "Palielināt (+10%)",
@@ -72,6 +75,7 @@ const translations = {
     macroMethod: "Makroelementu metode",
     sort: "Kārtot",
     sortPercent: "Pēc procentiem (O/T/Og)",
+    sortPreset: "Pēc gataviem šabloniem",
     protein: "Olbaltumvielas %",
     fat: "Tauki %",
     carb: "Ogļhidrāti %",
@@ -85,9 +89,14 @@ const translations = {
     calories: "Kalorijas",
     percent: "Procenti",
     total: "Kopā",
-    footerNote: "Olbaltumvielas un ogļhidrāti = 4 kcal/g, tauki = 9 kcal/g.",
+    footer: "Olbaltumvielas un ogļhidrāti = 4 kcal/g, tauki = 9 kcal/g.",
     errorInputs: "Ievadiet vecumu, svaru, garumu",
-    errorMacro: "Summai jābūt 100%. Tagad:"
+    errorMacro: "Summai jābūt 100%. Tagad:",
+    presetLabel: "Šablons",
+    presetBalanced: "Sabalansēts (30/30/40)",
+    presetHighProtein: "Augsts proteīns (40/30/30)",
+    presetLowCarb: "Maz ogļhidrātu (30/35/35)",
+    presetKeto: "Keto (20/70/10)"
   }
 };
 
@@ -96,16 +105,19 @@ function applyLanguage(lang) {
     const key = el.getAttribute("data-i18n");
     el.textContent = translations[lang][key];
   });
-
   localStorage.setItem("lang", lang);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+
   document.getElementById("langEN").addEventListener("click", () => applyLanguage("en"));
   document.getElementById("langLV").addEventListener("click", () => applyLanguage("lv"));
 
   const savedLang = localStorage.getItem("lang") || "en";
   applyLanguage(savedLang);
+
+  const presetContainer = document.getElementById("presetContainer");
+  const presetSelect = document.getElementById("presetSelect");
 
   const inputs = {
     sex: document.getElementById("dzimte"),
@@ -116,7 +128,8 @@ document.addEventListener("DOMContentLoaded", () => {
     goal: document.getElementById("merkis"),
     protein: document.getElementById("protein"),
     fat: document.getElementById("fat"),
-    carb: document.getElementById("carb")
+    carb: document.getElementById("carb"),
+    sort: document.getElementById("sort")
   };
 
   const calcBtn = document.querySelector("button[data-i18n='calculate']");
@@ -163,6 +176,34 @@ document.addEventListener("DOMContentLoaded", () => {
     athlete: 1.9
   };
 
+  const macroPresets = {
+    balanced: { protein: 30, fat: 30, carb: 40 },
+    highProtein: { protein: 40, fat: 30, carb: 30 },
+    lowCarb: { protein: 30, fat: 35, carb: 35 },
+    keto: { protein: 20, fat: 70, carb: 10 }
+  };
+
+  function applySortMethod() {
+    const method = inputs.sort.value;
+
+    presetContainer.style.display = "none";
+
+    if (method === "percent") {
+      updateMacroInputs();
+      return;
+    }
+
+    if (method === "preset") {
+      presetContainer.style.display = "block";
+      const preset = macroPresets[presetSelect.value];
+      inputs.protein.value = preset.protein;
+      inputs.fat.value = preset.fat;
+      inputs.carb.value = preset.carb;
+      validateMacros();
+      return;
+    }
+  }
+
   const macroBySex = {
     male: { protein: 30, fat: 25, carb: 45 },
     female: { protein: 25, fat: 30, carb: 45 }
@@ -190,8 +231,18 @@ document.addEventListener("DOMContentLoaded", () => {
     validateMacros();
   }
 
+  inputs.sort.addEventListener("change", applySortMethod);
+
   inputs.sex.addEventListener("change", updateMacroInputs);
   inputs.goal.addEventListener("change", updateMacroInputs);
+
+  presetSelect.addEventListener("change", () => {
+    const preset = macroPresets[presetSelect.value];
+    inputs.protein.value = preset.protein;
+    inputs.fat.value = preset.fat;
+    inputs.carb.value = preset.carb;
+    validateMacros();
+  });
 
   document.querySelectorAll("input[type='number']").forEach((input) => {
     input.setAttribute("min", "0");
@@ -234,11 +285,16 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    const proteinP = Number(inputs.protein.value);
-    const fatP = Number(inputs.fat.value);
-    const carbP = Number(inputs.carb.value);
+    let proteinP = Number(inputs.protein.value);
+    let fatP = Number(inputs.fat.value);
+    let carbP = Number(inputs.carb.value);
 
-    let dzimtesConstant = inputs.sex.value === "male" ? 5 : -161;
+    let dzimtesConstant;
+    if (inputs.sex.value === "male") {
+      dzimtesConstant = 5;
+    } else {
+      dzimtesConstant = -161;
+    }
 
     let bmr =
       10 * weight +
