@@ -185,8 +185,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const bmrBox = document.getElementById("bmrValue");
 
   const warningBox = document.createElement("div");
-  warningBox.style.color = "red";
+  warningBox.style.color = "yellow";
   warningBox.style.marginTop = "10px";
+  warningBox.style.fontWeight = "bold";
   inputs.carb.parentNode.appendChild(warningBox);
 
   const table = {
