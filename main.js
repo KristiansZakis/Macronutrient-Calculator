@@ -160,7 +160,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const savedLang = localStorage.getItem("lang") || "en";
   applyLanguage(savedLang);
 
-  const presetContainer = document.getElementById("presetContainer");
+  const presetContainer = document.getElementById("preseti");
   const presetSelect = document.getElementById("presetSelect");
 
   const inputs = {
@@ -228,17 +228,17 @@ document.addEventListener("DOMContentLoaded", () => {
     keto: { protein: 20, fat: 70, carb: 10 }
   };
 
+
+  presetContainer.style.display = "none";
+
   function applySortMethod() {
     const method = inputs.sort.value;
-
-    presetContainer.style.display = "none";
-
     if (method === "percent") {
       updateMacroInputs();
+      presetContainer.style.display = "none";
       return;
-    }
-
-    if (method === "preset") {
+    } 
+    else {
       presetContainer.style.display = "block";
       const preset = macroPresets[presetSelect.value];
       inputs.protein.value = preset.protein;

@@ -229,3 +229,25 @@ th, td {
     font-size: 13px;
   }
 }
+
+.pielegend {
+  background-color: rgb(0, 0, 0);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  padding-left: 150px;
+}
+
+#zils {
+  color: #002aff;
+}
+
+#dzeltens {
+  color: #51ff00;
+}
+
+#sarkans {
+  color: red;
+}
