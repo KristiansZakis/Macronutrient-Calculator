@@ -60,7 +60,10 @@ const translations = {
     formulaGrams: "Grams per macronutrient:",
     formulaProteinG: "Protein g = Protein kcal ÷ 4",
     formulaFatG: "Fat g = Fat kcal ÷ 9",
-    formulaCarbG: "Carb g = Carb kcal ÷ 4"
+    formulaCarbG: "Carb g = Carb kcal ÷ 4",
+    Olbaltumvielas: "Protein",
+    Tauki: "Fat",
+    Ogļhidrāti: "Carbonates"
   },
 
   lv: {
@@ -124,7 +127,10 @@ const translations = {
     formulaGrams: "Grami pēc makroelementiem:",
     formulaProteinG: "Olbaltumvielas g = Olb. kcal ÷ 4",
     formulaFatG: "Tauki g = Tauk. kcal ÷ 9",
-    formulaCarbG: "Ogļhidrāti g = Ogļh. kcal ÷ 4"
+    formulaCarbG: "Ogļhidrāti g = Ogļh. kcal ÷ 4",
+    Olbaltumvielas: "Olbamtumvielas",
+    Tauki: "Tauki",
+    Ogļhidrāti: "Ogļhidrāti"
   }
 };
 
