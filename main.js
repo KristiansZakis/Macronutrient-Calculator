@@ -1,422 +1,460 @@
 const translations = {
-  en: {
-    title: "Macronutrient Calculator",
-    subtitle: "Estimate calories (TDEE) and split them into protein, fats, and carbs. All in one page, no tracking required.",
-    yourDetails: "Your details",
-    sex: "Sex",
-    male: "Male",
-    female: "Female",
-    age: "Age",
-    weight: "Weight (kg)",
-    height: "Height (cm)",
-    activity: "Activity level",
-    act1: "Sedentary (little or no exercise)",
-    act2: "Light exercise (1–3 days/week)",
-    act3: "Moderate exercise (3–5 days/week)",
-    act4: "Heavy exercise (6–7 days/week)",
-    act5: "Athlete (twice per day)",
-    goalHeader: "Goal",
-    target: "Target",
-    goal1: "Maximum fat loss (-20%)",
-    goal2: "Fat loss (-10%)",
-    goal3: "Maintain (0%)",
-    goal4: "Gain (+10%)",
-    goal5: "Gain a lot (+20%)",
-    macroMethod: "Macronutrient method",
-    sort: "Sort",
-    sortPercent: "By percentages (P/F/C)",
-    sortPreset: "By preset templates",
-    protein: "Protein %",
-    fat: "Fat %",
-    carb: "Carb %",
-    calculate: "Calculate",
-    reset: "Reset",
-    tdee: "TDEE (est.)",
-    dailyTarget: "Daily target",
-    bmr: "BMR",
-    macro: "Macronutrient",
-    grams: "Grams / day",
-    calories: "Calories",
-    percent: "Percent",
-    total: "Total",
-    footer: "Protein and carbohydrates = 4 kcal/g, fat = 9 kcal/g.",
-    errorInputs: "Enter age, weight, height",
-    errorMacro: "Sum must be 100%. Now:",
-    presetLabel: "Preset",
-    presetBalanced: "Balanced (30/30/40)",
-    presetHighProtein: "High protein (40/30/30)",
-    presetLowCarb: "Low carb (30/35/35)",
-    presetKeto: "Keto (20/70/10)",
-    formulaTitle: "How calculations work",
-    formulaBMR: "BMR (Mifflin–St Jeor):",
-    formulaBMRMale: "Men: BMR = 10×weight + 6.25×height – 5×age + 5",
-    formulaBMRFemale: "Women: BMR = 10×weight + 6.25×height – 5×age – 161",
-    formulaTDEE: "TDEE = BMR × activity factor",
-    formulaTarget: "Daily target = TDEE × goal modifier",
-    formulaMacros: "Calories per macronutrient:",
-    formulaProteinKcal: "Protein kcal = Target × (Protein% ÷ 100)",
-    formulaFatKcal: "Fat kcal = Target × (Fat% ÷ 100)",
-    formulaCarbKcal: "Carb kcal = Target × (Carb% ÷ 100)",
-    formulaGrams: "Grams per macronutrient:",
-    formulaProteinG: "Protein g = Protein kcal ÷ 4",
-    formulaFatG: "Fat g = Fat kcal ÷ 9",
-    formulaCarbG: "Carb g = Carb kcal ÷ 4",
-    Olbaltumvielas: "Protein",
-    Tauki: "Fat",
-    Ogļhidrāti: "Carbonates"
-  },
+    en: {
+        virsraksts: "Macronutrient Calculator",
+        apaksteksts: "Estimate calories (TDEE) and split them into protein, fats, and carbs.",
+        taviDati: "Your details",
+        dzimte: "Sex",
+        virietis: "Male",
+        sieviete: "Female",
+        vecums: "Age",
+        svars: "Weight (kg)",
+        garums: "Height (cm)",
+        aktivitate: "Activity level",
+        akt1: "Sedentary (little or no exercise)",
+        akt2: "Light exercise (1–3 days/week)",
+        akt3: "Moderate exercise (3–5 days/week)",
+        akt4: "Heavy exercise (6–7 days/week)",
+        akt5: "Athlete (twice per day)",
+        merkisVirsraksts: "Goal",
+        merkis: "Target",
+        merkis1: "Maximum fat loss (-20%)",
+        merkis2: "Fat loss (-10%)",
+        merkis3: "Maintain (0%)",
+        merkis4: "Gain (+10%)",
+        merkis5: "Gain a lot (+20%)",
+        makroMetode: "Macronutrient method",
+        kartosana: "Sort",
+        kartProc: "By percentages",
+        kartSabloni: "By preset templates",
+        sablonaNosaukums: "Preset",
+        sablonsSabalansēts: "Balanced (30/30/40)",
+        sablonsAugstsProteins: "High protein (40/30/30)",
+        sablonsMazOglhidratu: "Low carb (30/35/35)",
+        sablonsKeto: "Keto (20/70/10)",
+        olbaltumvielas: "Protein %",
+        tauki: "Fat %",
+        oglhidrati: "Carb %",
+        aprekinat: "Calculate",
+        atiestatit: "Reset",
+        tdee: "TDEE (est.)",
+        dienasMerkis: "Daily target",
+        bmr: "BMR",
+        makroelementi: "Macronutrient",
+        grami: "Grams / day",
+        kalorijas: "Calories",
+        procenti: "Percent",
+        kopa: "Total",
+        formulas: "Formulas",
+        formulaBMR: "BMR (Mifflin–St Jeor):",
+        formulaBMRVirietis: "Men: BMR = 10×weight + 6.25×height – 5×age + 5",
+        formulaBMRSieviete: "Women: BMR = 10×weight + 6.25×height – 5×age – 161",
+        formulaTDEE: "TDEE = BMR × activity factor",
+        formulaDienasMerkis: "Daily target = TDEE × goal modifier",
+        formulaMakroKalorijas: "Calories per macronutrient:",
+        formulaOlbaltumvieluKcal: "Protein kcal = Target × (Protein% ÷ 100)",
+        formulaTaukuKcal: "Fat kcal = Target × (Fat% ÷ 100)",
+        formulaOglhidratuKcal: "Carb kcal = Target × (Carb% ÷ 100)",
+        formulaMakroGrami: "Grams per macronutrient:",
+        formulaOlbaltumvieluG: "Protein g = Protein kcal ÷ 4",
+        formulaTaukuG: "Fat g = Fat kcal ÷ 9",
+        formulaOglhidratuG: "Carb g = Carb kcal ÷ 4",
+        piezime: "Protein and carbohydrates = 4 kcal/g, fat = 9 kcal/g.",
+        kludaIevade: "Enter age, weight, height",
+        kludaMakro: "Sum must be 100%. Now:",
+        Olbaltumvielas: "Protein",
+        Tauki: "Fat",
+        Ogļhidrāti: "Carbonates"
+    },
 
-  lv: {
-    title: "Makroelementu kalkulators",
-    subtitle: "Aprēķini TDEE un sadali kalorijas olbaltumvielās, taukos un ogļhidrātos. Viss vienā lapā, bez izsekošanas.",
-    yourDetails: "Tavi dati",
-    sex: "Dzimums",
-    male: "Vīrietis",
-    female: "Sieviete",
-    age: "Vecums",
-    weight: "Svars (kg)",
-    height: "Garums (cm)",
-    activity: "Aktivitātes līmenis",
-    act1: "Mazkustīgs (maz vai nav aktivitātes)",
-    act2: "Vieglas aktivitātes (1–3 dienas nedēļā)",
-    act3: "Vidējas aktivitātes (3–5 dienas nedēļā)",
-    act4: "Intensīvas aktivitātes (6–7 dienas nedēļā)",
-    act5: "Sportists (2 reizes dienā)",
-    goalHeader: "Mērķis",
-    target: "Mērķis",
-    goal1: "Maksimāls tauku zudums (-20%)",
-    goal2: "Tauku zudums (-10%)",
-    goal3: "Uzturēt (0%)",
-    goal4: "Palielināt (+10%)",
-    goal5: "Palielināt daudz (+20%)",
-    macroMethod: "Makroelementu metode",
-    sort: "Kārtot",
-    sortPercent: "Pēc procentiem (O/T/Og)",
-    sortPreset: "Pēc gataviem šabloniem",
-    protein: "Olbaltumvielas %",
-    fat: "Tauki %",
-    carb: "Ogļhidrāti %",
-    calculate: "Aprēķināt",
-    reset: "Atiestatīt",
-    tdee: "TDEE (apr.)",
-    dailyTarget: "Dienas mērķis",
-    bmr: "BMR",
-    macro: "Makroelements",
-    grams: "Grami dienā",
-    calories: "Kalorijas",
-    percent: "Procenti",
-    total: "Kopā",
-    footer: "Olbaltumvielas un ogļhidrāti = 4 kcal/g, tauki = 9 kcal/g.",
-    errorInputs: "Ievadiet vecumu, svaru, garumu",
-    errorMacro: "Summai jābūt 100%. Tagad:",
-    presetLabel: "Šablons",
-    presetBalanced: "Sabalansēts (30/30/40)",
-    presetHighProtein: "Augsts proteīns (40/30/30)",
-    presetLowCarb: "Maz ogļhidrātu (30/35/35)",
-    presetKeto: "Keto (20/70/10)",
-    formulaTitle: "Kā notiek aprēķini",
-    formulaBMR: "BMR (Mifflin–St Jeor):",
-    formulaBMRMale: "Vīrieši: BMR = 10×svars + 6.25×garums – 5×vecums + 5",
-    formulaBMRFemale: "Sievietes: BMR = 10×svars + 6.25×garums – 5×vecums – 161",
-    formulaTDEE: "TDEE = BMR × aktivitātes koeficients",
-    formulaTarget: "Dienas mērķis = TDEE × mērķa koeficients",
-    formulaMacros: "Kalorijas pēc makroelementiem:",
-    formulaProteinKcal: "Olbaltumvielu kcal = Mērķis × (Olb.% ÷ 100)",
-    formulaFatKcal: "Tauku kcal = Mērķis × (Tauk.% ÷ 100)",
-    formulaCarbKcal: "Ogļhidrātu kcal = Mērķis × (Ogļh.% ÷ 100)",
-    formulaGrams: "Grami pēc makroelementiem:",
-    formulaProteinG: "Olbaltumvielas g = Olb. kcal ÷ 4",
-    formulaFatG: "Tauki g = Tauk. kcal ÷ 9",
-    formulaCarbG: "Ogļhidrāti g = Ogļh. kcal ÷ 4",
-    Olbaltumvielas: "Olbamtumvielas",
-    Tauki: "Tauki",
-    Ogļhidrāti: "Ogļhidrāti"
-  }
+    lv: {
+        virsraksts: "Makroelementu kalkulators",
+        apaksteksts: "Aprēķini TDEE un sadali kalorijas olbaltumvielās, taukos un ogļhidrātos.",
+        taviDati: "Tavi dati",
+        dzimte: "Dzimums",
+        virietis: "Vīrietis",
+        sieviete: "Sieviete",
+        vecums: "Vecums",
+        svars: "Svars (kg)",
+        garums: "Garums (cm)",
+        aktivitate: "Aktivitātes līmenis",
+        akt1: "Mazkustīgs (maz vai nav aktivitātes)",
+        akt2: "Vieglas aktivitātes (1–3 dienas nedēļā)",
+        akt3: "Vidējas aktivitātes (3–5 dienas nedēļā)",
+        akt4: "Intensīvas aktivitātes (6–7 dienas nedēļā)",
+        akt5: "Sportists (2 reizes dienā)",
+        merkisVirsraksts: "Mērķis",
+        merkis: "Mērķis",
+        merkis1: "Maksimāls tauku zudums (-20%)",
+        merkis2: "Tauku zudums (-10%)",
+        merkis3: "Uzturēt (0%)",
+        merkis4: "Palielināt (+10%)",
+        merkis5: "Palielināt daudz (+20%)",
+        makroMetode: "Makroelementu metode",
+        kartosana: "Kārtot",
+        kartProc: "Pēc procentiem",
+        kartSabloni: "Pēc šabloniem",
+        sablonaNosaukums: "Šablons",
+        sablonsSabalansēts: "Sabalansēts (30/30/40)",
+        sablonsAugstsProteins: "Augsts proteīns (40/30/30)",
+        sablonsMazOglhidratu: "Maz ogļhidrātu (30/35/35)",
+        sablonsKeto: "Keto (20/70/10)",
+        olbaltumvielas: "Olbaltumvielas %",
+        tauki: "Tauki %",
+        oglhidrati: "Ogļhidrāti %",
+        aprekinat: "Aprēķināt",
+        atiestatit: "Atiestatīt",
+        tdee: "TDEE",
+        dienasMerkis: "Dienas mērķis",
+        bmr: "BMR",
+        makroelementi: "Makroelementi",
+        grami: "Grami dienā",
+        kalorijas: "Kalorijas",
+        procenti: "Procenti",
+        kopa: "Kopā",
+        formulas: "Formulas",
+        formulaBMR: "BMR (Mifflin–St Jeor):",
+        formulaBMRVirietis: "Vīrieši: BMR = 10×svars + 6.25×garums – 5×vecums + 5",
+        formulaBMRSieviete: "Sievietes: BMR = 10×svars + 6.25×garums – 5×vecums – 161",
+        formulaTDEE: "TDEE = BMR × aktivitātes koeficients",
+        formulaDienasMerkis: "Dienas mērķis = TDEE × mērķa koeficients",
+        formulaMakroKalorijas: "Kalorijas pēc makroelementiem:",
+        formulaOlbaltumvieluKcal: "Olbaltumvielu kcal = Mērķis × (Olb.% ÷ 100)",
+        formulaTaukuKcal: "Tauku kcal = Mērķis × (Tauk.% ÷ 100)",
+        formulaOglhidratuKcal: "Ogļhidrātu kcal = Mērķis × (Ogļh.% ÷ 100)",
+        formulaMakroGrami: "Grami pēc makroelementiem:",
+        formulaOlbaltumvieluG: "Olbaltumvielas g = Olb. kcal ÷ 4",
+        formulaTaukuG: "Tauki g = Tauk. kcal ÷ 9",
+        formulaOglhidratuG: "Ogļhidrāti g = Ogļh. kcal ÷ 4",
+        piezime: "Olbaltumvielas un ogļhidrāti = 4 kcal/g, tauki = 9 kcal/g.",
+        kludaIevade: "Ievadiet vecumu, svaru, garumu",
+        kludaMakro: "Summai jābūt 100%. Tagad:",
+        Olbaltumvielas: "Olbamtumvielas",
+        Tauki: "Tauki",
+        Ogļhidrāti: "Ogļhidrāti"
+    }
 };
 
-function applyLanguage(lang) {
-  document.querySelectorAll("[data-i18n]").forEach(el => {
-    const key = el.getAttribute("data-i18n");
-    el.textContent = translations[lang][key];
-  });
-  localStorage.setItem("lang", lang);
+
+function applyLanguage(valoda) {
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+        const atsl = el.getAttribute("data-i18n");
+        el.textContent = translations[valoda][atsl];
+    });
+    localStorage.setItem("lang", valoda);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  const accordionHeader = document.querySelector(".accordion-header");
-  const accordionContent = document.querySelector(".accordion-content");
-  
-  accordionHeader.addEventListener("click", () => {
-    const isOpen = accordionContent.style.maxHeight;
-  
-    if (isOpen) {
-      accordionContent.style.maxHeight = null;
-      accordionContent.classList.remove("open");
-    } else {
-      accordionContent.style.maxHeight = accordionContent.scrollHeight + "px";
-      accordionContent.classList.add("open");
-    }
-  });
+    const akordeonaGalvene = document.querySelector(".accordion-header");
+    const akordeonaSaturs = document.querySelector(".accordion-content");
 
+    akordeonaGalvene.addEventListener("click", () => {
+        const irAtverts = akordeonaSaturs.style.maxHeight;
 
-  document.getElementById("langEN").addEventListener("click", () => applyLanguage("en"));
-  document.getElementById("langLV").addEventListener("click", () => applyLanguage("lv"));
-
-  const savedLang = localStorage.getItem("lang") || "en";
-  applyLanguage(savedLang);
-
-  const presetContainer = document.getElementById("preseti");
-  const presetSelect = document.getElementById("presetSelect");
-
-  const inputs = {
-    sex: document.getElementById("dzimte"),
-    age: document.getElementById("vecums"),
-    weight: document.getElementById("svars"),
-    height: document.getElementById("garums"),
-    activity: document.getElementById("aktivitate"),
-    goal: document.getElementById("merkis"),
-    protein: document.getElementById("protein"),
-    fat: document.getElementById("fat"),
-    carb: document.getElementById("carb"),
-    sort: document.getElementById("sort")
-  };
-
-  const calcBtn = document.querySelector("button[data-i18n='calculate']");
-  const resetBtn = document.querySelector("button[data-i18n='reset']");
-  const pie = document.querySelector(".pie");
-
-  const tdeeBox = document.getElementById("tdeeValue");
-  const targetBox = document.getElementById("targetValue");
-  const bmrBox = document.getElementById("bmrValue");
-
-  const warningBox = document.createElement("div");
-  warningBox.style.color = "yellow";
-  warningBox.style.marginTop = "10px";
-  warningBox.style.fontWeight = "bold";
-  inputs.carb.parentNode.appendChild(warningBox);
-
-  const table = {
-    protein: {
-      grams: document.querySelector("table tr:nth-child(2) td:nth-child(2)"),
-      calories: document.querySelector("table tr:nth-child(2) td:nth-child(3)"),
-      percent: document.querySelector("table tr:nth-child(2) td:nth-child(4)")
-    },
-    fat: {
-      grams: document.querySelector("table tr:nth-child(3) td:nth-child(2)"),
-      calories: document.querySelector("table tr:nth-child(3) td:nth-child(3)"),
-      percent: document.querySelector("table tr:nth-child(3) td:nth-child(4)")
-    },
-    carb: {
-      grams: document.querySelector("table tr:nth-child(4) td:nth-child(2)"),
-      calories: document.querySelector("table tr:nth-child(4) td:nth-child(3)"),
-      percent: document.querySelector("table tr:nth-child(4) td:nth-child(4)")
-    },
-    total: {
-      grams: document.querySelector("table tr:nth-child(5) th:nth-child(2)"),
-      calories: document.querySelector("table tr:nth-child(5) th:nth-child(3)"),
-      percent: document.querySelector("table tr:nth-child(5) th:nth-child(4)")
-    }
-  };
-
-  const activityMap = {
-    sedentary: 1.2,
-    light: 1.375,
-    moderate: 1.55,
-    heavy: 1.725,
-    athlete: 1.9
-  };
-
-  const macroPresets = {
-    balanced: { protein: 30, fat: 30, carb: 40 },
-    highProtein: { protein: 40, fat: 30, carb: 30 },
-    lowCarb: { protein: 30, fat: 35, carb: 35 },
-    keto: { protein: 20, fat: 70, carb: 10 }
-  };
-
-
-  presetContainer.style.display = "none";
-
-  function applySortMethod() {
-    const method = inputs.sort.value;
-    if (method === "percent") {
-      updateMacroInputs();
-      presetContainer.style.display = "none";
-      return;
-    } 
-    else {
-      presetContainer.style.display = "block";
-      const preset = macroPresets[presetSelect.value];
-      inputs.protein.value = preset.protein;
-      inputs.fat.value = preset.fat;
-      inputs.carb.value = preset.carb;
-      validateMacros();
-      return;
-    }
-  }
-
-  const macroBySex = {
-    male: { protein: 30, fat: 25, carb: 45 },
-    female: { protein: 25, fat: 30, carb: 45 }
-  };
-
-  const macroGoalAdjust = {
-    goal1: { protein: +10, fat: -5, carb: -5 },
-    goal2: { protein: +2, fat: -2, carb: 0 },
-    goal3: { protein: 0, fat: 0, carb: 0 },
-    goal4: { protein: -2, fat: +2, carb: 0 },
-    goal5: { protein: -10, fat: +5, carb: +5 }
-  };
-
-  function updateMacroInputs() {
-    const sex = inputs.sex.value;
-    const goal = inputs.goal.value;
-
-    const base = macroBySex[sex];
-    const adj = macroGoalAdjust[goal];
-
-    inputs.protein.value = base.protein + adj.protein;
-    inputs.fat.value = base.fat + adj.fat;
-    inputs.carb.value = base.carb + adj.carb;
-
-    validateMacros();
-  }
-
-  inputs.sort.addEventListener("change", applySortMethod);
-
-  inputs.sex.addEventListener("change", updateMacroInputs);
-  inputs.goal.addEventListener("change", updateMacroInputs);
-
-  presetSelect.addEventListener("change", () => {
-    const preset = macroPresets[presetSelect.value];
-    inputs.protein.value = preset.protein;
-    inputs.fat.value = preset.fat;
-    inputs.carb.value = preset.carb;
-    validateMacros();
-  });
-
-  document.querySelectorAll("input[type='number']").forEach((input) => {
-    input.setAttribute("min", "0");
-    input.addEventListener("input", () => {
-      if (input.value < 0) input.value = 0;
-      validateMacros();
+        if (irAtverts) {
+            akordeonaSaturs.style.maxHeight = null;
+            akordeonaSaturs.classList.remove("open");
+        } else {
+            akordeonaSaturs.style.maxHeight = akordeonaSaturs.scrollHeight + "px";
+            akordeonaSaturs.classList.add("open");
+        }
     });
-  });
 
-  function validateMacros() {
-    const p = Number(inputs.protein.value);
-    const f = Number(inputs.fat.value);
-    const c = Number(inputs.carb.value);
+    document.getElementById("valodaEN").addEventListener("click", () => applyLanguage("en"));
+    document.getElementById("valodaLV").addEventListener("click", () => applyLanguage("lv"));
 
-    const sum = p + f + c;
+    const saglabataValoda = localStorage.getItem("lang") || "lv";
+    applyLanguage(saglabataValoda);
 
-    if (sum !== 100) {
-      const lang = localStorage.getItem("lang") || "en";
-      warningBox.textContent = `${translations[lang].errorMacro} ${sum}%`;
-      calcBtn.disabled = true;
-      return false;
-    }
+    const sablonaKonteneris = document.getElementById("sablonaKonteneris");
+    const sablonaIzvele = document.getElementById("sablonaIzvele");
 
-    warningBox.textContent = "";
-    calcBtn.disabled = false;
-    return true;
-  }
-
-  function calculate() {
-    if (!validateMacros()) return;
-
-    const age = Number(inputs.age.value);
-    const weight = Number(inputs.weight.value);
-    const height = Number(inputs.height.value);
-
-    const lang = localStorage.getItem("lang") || "en";
-
-    if (age <= 0 || weight <= 0 || height <= 0) {
-      warningBox.textContent = translations[lang].errorInputs;
-      return;
-    }
-
-    let proteinP = Number(inputs.protein.value);
-    let fatP = Number(inputs.fat.value);
-    let carbP = Number(inputs.carb.value);
-
-    let dzimtesConstant;
-    if (inputs.sex.value === "male") {
-      dzimtesConstant = 5;
-    } else {
-      dzimtesConstant = -161;
-    }
-
-    let bmr =
-      10 * weight +
-      6.25 * height -
-      5 * age +
-      dzimtesConstant;
-
-    const activity = activityMap[inputs.activity.value];
-    const tdee = bmr * activity;
-
-    const goalMap = {
-      goal1: 0.8,
-      goal2: 0.9,
-      goal3: 1.0,
-      goal4: 1.1,
-      goal5: 1.2
+    const ievades = {
+        dzimte: document.getElementById("dzimte"),
+        vecums: document.getElementById("vecums"),
+        svars: document.getElementById("svars"),
+        garums: document.getElementById("garums"),
+        aktivitate: document.getElementById("aktivitate"),
+        merkis: document.getElementById("merkis"),
+        olbaltumvielas: document.getElementById("olbaltumvielas"),
+        tauki: document.getElementById("tauki"),
+        oglhidrati: document.getElementById("oglhidrati"),
+        kartosana: document.getElementById("kartosana")
     };
 
-    const target = Math.round(tdee * goalMap[inputs.goal.value]);
+    const aprekinatPoga = document.querySelector("button[data-i18n='aprekinat']");
+    const atiestatitPoga = document.querySelector("button[data-i18n='atiestatit']");
+    const pogaDiagramma = document.querySelector(".pie");
 
-    const proteinCalories = (target * proteinP) / 100;
-    const fatCalories = (target * fatP) / 100;
-    const carbCalories = (target * carbP) / 100;
+    const tdeeLauks = document.getElementById("tdeeLauks");
+    const dienasMerkisLauks = document.getElementById("dienasMerkisLauks");
+    const bmrLauks = document.getElementById("bmrLauks");
 
-    const gramsProtein = proteinCalories / 4;
-    const gramsFat = fatCalories / 9;
-    const gramsCarb = carbCalories / 4;
+    const bridinajums = document.createElement("div");
+    bridinajums.style.color = "yellow";
+    bridinajums.style.marginTop = "10px";
+    bridinajums.style.fontWeight = "bold";
+    ievades.oglhidrati.parentNode.appendChild(bridinajums);
 
-    tdeeBox.innerText = Math.round(tdee) + " kcal";
-    targetBox.innerText = Math.round(target) + " kcal";
-    bmrBox.innerText = Math.round(bmr) + " kcal";
+    const tabula = {
+        olbaltumvielas: {
+            grami: document.querySelector("table tr:nth-child(2) td:nth-child(2)"),
+            kalorijas: document.querySelector("table tr:nth-child(2) td:nth-child(3)"),
+            procenti: document.querySelector("table tr:nth-child(2) td:nth-child(4)")
+        },
+        tauki: {
+            grami: document.querySelector("table tr:nth-child(3) td:nth-child(2)"),
+            kalorijas: document.querySelector("table tr:nth-child(3) td:nth-child(3)"),
+            procenti: document.querySelector("table tr:nth-child(3) td:nth-child(4)")
+        },
+        oglhidrati: {
+            grami: document.querySelector("table tr:nth-child(4) td:nth-child(2)"),
+            kalorijas: document.querySelector("table tr:nth-child(4) td:nth-child(3)"),
+            procenti: document.querySelector("table tr:nth-child(4) td:nth-child(4)")
+        },
+        kopa: {
+            grami: document.querySelector("table tr:nth-child(5) th:nth-child(2)"),
+            kalorijas: document.querySelector("table tr:nth-child(5) th:nth-child(3)"),
+            procenti: document.querySelector("table tr:nth-child(5) th:nth-child(4)")
+        }
+    };
 
-    table.protein.grams.innerText = gramsProtein.toFixed(1);
-    table.protein.calories.innerText = Math.round(proteinCalories);
-    table.protein.percent.innerText = proteinP + "%";
+    const aktivitatesKarte = {
+        sedentary: 1.2,
+        light: 1.375,
+        moderate: 1.55,
+        heavy: 1.725,
+        athlete: 1.9
+    };
 
-    table.fat.grams.innerText = gramsFat.toFixed(1);
-    table.fat.calories.innerText = Math.round(fatCalories);
-    table.fat.percent.innerText = fatP + "%";
+    const makroSabloni = {
+        balanced: {
+            olbaltumvielas: 30,
+            tauki: 30,
+            oglhidrati: 40
+        },
+        highProtein: {
+            olbaltumvielas: 40,
+            tauki: 30,
+            oglhidrati: 30
+        },
+        lowCarb: {
+            olbaltumvielas: 30,
+            tauki: 35,
+            oglhidrati: 35
+        },
+        keto: {
+            olbaltumvielas: 20,
+            tauki: 70,
+            oglhidrati: 10
+        }
+    };
 
-    table.carb.grams.innerText = gramsCarb.toFixed(1);
-    table.carb.calories.innerText = Math.round(carbCalories);
-    table.carb.percent.innerText = carbP + "%";
+    sablonaKonteneris.style.display = "none";
 
-    table.total.grams.innerText = (
-      gramsProtein +
-      gramsFat +
-      gramsCarb
-    ).toFixed(1);
-    table.total.calories.innerText = target;
-    table.total.percent.innerText = "100%";
+    function pielietotKartosanasMetodi() {
+        const metode = ievades.kartosana.value;
 
-    const angleProtein = proteinP * 3.6;
-    const angleFat = angleProtein + fatP * 3.6;
+        sablonaKonteneris.style.display = "none";
 
-    pie.style.background = `conic-gradient(
-      #002aff 0deg ${angleProtein}deg,
-      #51ff00 ${angleProtein}deg ${angleFat}deg,
-      #ff0000 ${angleFat}deg 360deg
-    )`;
-  }
+        if (metode === "percent") {
+            atjaunotMakroIevadi();
+            sablonaKonteneris.style.display = "none";
 
-  function resetAll() {
-    Object.values(inputs).forEach((el) => {
-      if (el.tagName === "INPUT") el.value = 0;
+            return;
+        } else {
+            sablonaKonteneris.style.display = "block";
+            const sablons = makroSabloni[sablonaIzvele.value];
+            ievades.olbaltumvielas.value = sablons.olbaltumvielas;
+            ievades.tauki.value = sablons.tauki;
+            ievades.oglhidrati.value = sablons.oglhidrati;
+            parbauditMakro();
+            return;
+        }
+    }
+
+    const makroPecDzimuma = {
+        male: {
+            olbaltumvielas: 30,
+            tauki: 25,
+            oglhidrati: 45
+        },
+        female: {
+            olbaltumvielas: 25,
+            tauki: 30,
+            oglhidrati: 45
+        }
+    };
+
+    const makroMerkaKorekcija = {
+        goal1: {
+            olbaltumvielas: +10,
+            tauki: -5,
+            oglhidrati: -5
+        },
+        goal2: {
+            olbaltumvielas: +2,
+            tauki: -2,
+            oglhidrati: 0
+        },
+        goal3: {
+            olbaltumvielas: 0,
+            tauki: 0,
+            oglhidrati: 0
+        },
+        goal4: {
+            olbaltumvielas: -2,
+            tauki: +2,
+            oglhidrati: 0
+        },
+        goal5: {
+            olbaltumvielas: -10,
+            tauki: +5,
+            oglhidrati: +5
+        }
+    };
+
+    function atjaunotMakroIevadi() {
+        const dzimte = ievades.dzimte.value;
+        const merkis = ievades.merkis.value;
+
+        const pamats = makroPecDzimuma[dzimte];
+        const korekcija = makroMerkaKorekcija[merkis];
+
+        ievades.olbaltumvielas.value = pamats.olbaltumvielas + korekcija.olbaltumvielas;
+        ievades.tauki.value = pamats.tauki + korekcija.tauki;
+        ievades.oglhidrati.value = pamats.oglhidrati + korekcija.oglhidrati;
+
+        parbauditMakro();
+    }
+
+    ievades.kartosana.addEventListener("change", pielietotKartosanasMetodi);
+    ievades.dzimte.addEventListener("change", atjaunotMakroIevadi);
+    ievades.merkis.addEventListener("change", atjaunotMakroIevadi);
+
+    sablonaIzvele.addEventListener("change", () => {
+        const sablons = makroSabloni[sablonaIzvele.value];
+        ievades.olbaltumvielas.value = sablons.olbaltumvielas;
+        ievades.tauki.value = sablons.tauki;
+        ievades.oglhidrati.value = sablons.oglhidrati;
+        parbauditMakro();
     });
-    warningBox.textContent = "";
-  }
 
-  calcBtn.addEventListener("click", calculate);
-  resetBtn.addEventListener("click", resetAll);
+    document.querySelectorAll("input[type='number']").forEach((ievade) => {
+        ievade.setAttribute("min", "0");
+        ievade.addEventListener("input", () => {
+            if (ievade.value < 0) ievade.value = 0;
+            parbauditMakro();
+        });
+    });
 
-  updateMacroInputs();
+    function parbauditMakro() {
+        const p = Number(ievades.olbaltumvielas.value);
+        const t = Number(ievades.tauki.value);
+        const o = Number(ievades.oglhidrati.value);
+
+        const summa = p + t + o;
+
+        if (summa !== 100) {
+            const valoda = localStorage.getItem("lang") || "lv";
+            bridinajums.textContent = `${translations[valoda].kludaMakro} ${summa}%`;
+            aprekinatPoga.disabled = true;
+            return false;
+        }
+
+        bridinajums.textContent = "";
+        aprekinatPoga.disabled = false;
+        return true;
+    }
+
+    function aprekinat() {
+        if (!parbauditMakro()) return;
+
+        const vecums = Number(ievades.vecums.value);
+        const svars = Number(ievades.svars.value);
+        const garums = Number(ievades.garums.value);
+
+        const valoda = localStorage.getItem("lang") || "lv";
+
+        if (vecums <= 0 || svars <= 0 || garums <= 0) {
+            bridinajums.textContent = translations[valoda].kludaIevade;
+            return;
+        }
+
+        let olbProc = Number(ievades.olbaltumvielas.value);
+        let tauProc = Number(ievades.tauki.value);
+        let oglProc = Number(ievades.oglhidrati.value);
+
+        let dzKonst;
+        if (ievades.dzimte.value === "male") dzKonst = 5;
+        else dzKonst = -161;
+
+        let bmr =
+            10 * svars +
+            6.25 * garums -
+            5 * vecums +
+            dzKonst;
+
+        const aktKoef = aktivitatesKarte[ievades.aktivitate.value];
+        const tdee = bmr * aktKoef;
+
+        const merkaKoef = {
+            goal1: 0.8,
+            goal2: 0.9,
+            goal3: 1.0,
+            goal4: 1.1,
+            goal5: 1.2
+        };
+
+        const merkisKcal = Math.round(tdee * merkaKoef[ievades.merkis.value]);
+
+        const olbKcal = (merkisKcal * olbProc) / 100;
+        const tauKcal = (merkisKcal * tauProc) / 100;
+        const oglKcal = (merkisKcal * oglProc) / 100;
+
+        const grOlb = olbKcal / 4;
+        const grTau = tauKcal / 9;
+        const grOgl = oglKcal / 4;
+
+        tdeeLauks.innerText = Math.round(tdee) + " kcal";
+        dienasMerkisLauks.innerText = Math.round(merkisKcal) + " kcal";
+        bmrLauks.innerText = Math.round(bmr) + " kcal";
+
+        tabula.olbaltumvielas.grami.innerText = grOlb.toFixed(1);
+        tabula.olbaltumvielas.kalorijas.innerText = Math.round(olbKcal);
+        tabula.olbaltumvielas.procenti.innerText = olbProc + "%";
+
+        tabula.tauki.grami.innerText = grTau.toFixed(1);
+        tabula.tauki.kalorijas.innerText = Math.round(tauKcal);
+        tabula.tauki.procenti.innerText = tauProc + "%";
+
+        tabula.oglhidrati.grami.innerText = grOgl.toFixed(1);
+        tabula.oglhidrati.kalorijas.innerText = Math.round(oglKcal);
+        tabula.oglhidrati.procenti.innerText = oglProc + "%";
+
+        tabula.kopa.grami.innerText = (grOlb + grTau + grOgl).toFixed(1);
+        tabula.kopa.kalorijas.innerText = merkisKcal;
+        tabula.kopa.procenti.innerText = "100%";
+
+        const lenkisOlb = olbProc * 3.6;
+        const lenkisTau = lenkisOlb + tauProc * 3.6;
+
+        pogaDiagramma.style.background = `conic-gradient(
+      #002aff 0deg ${lenkisOlb}deg,
+      #51ff00 ${lenkisOlb}deg ${lenkisTau}deg,
+      #ff0000 ${lenkisTau}deg 360deg
+    )`;
+    }
+
+    function atiestatitVisu() {
+        Object.values(ievades).forEach((el) => {
+            if (el.tagName === "INPUT") el.value = 0;
+        });
+        bridinajums.textContent = "";
+    }
+
+    aprekinatPoga.addEventListener("click", aprekinat);
+    atiestatitPoga.addEventListener("click", atiestatitVisu);
+
+    atjaunotMakroIevadi();
 });
