@@ -51,24 +51,17 @@ label {
     font-size: 14px;
 }
 
-input {
-    width: 100%;
-    padding: 10px;
-    border-radius: 6px;
-    border: border-box;
-    margin-bottom: 15px;
-    background: #000000;
-    color: #fff;
-}
-
+input,
 select {
-    width: 100%;
-    padding: 10px;
-    border-radius: 6px;
-    border: border-box;
-    margin-bottom: 15px;
-    background: #000000;
-    color: #fff;
+  width: 100%;
+  max-width: 550px;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  margin-bottom: 15px;
+  background: #000000;
+  color: #fff;
+  box-sizing: border-box;
 }
 
 button {
@@ -178,6 +171,7 @@ th,td {
 
     .info {
         padding: 15px;
+        width: 100%
     }
 
     h1 {
