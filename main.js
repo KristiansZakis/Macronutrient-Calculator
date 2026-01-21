@@ -58,7 +58,9 @@ const translations = {
         formulaOlbaltumvieluG: "Protein g = Protein kcal ÷ 4",
         formulaTaukuG: "Fat g = Fat kcal ÷ 9",
         formulaOglhidratuG: "Carb g = Carb kcal ÷ 4",
-        piezime: "Protein and carbohydrates = 4 kcal/g, fat = 9 kcal/g.",
+        piezime: "Protein and carbohydrates = 4 kcal/g, fat = 9 kcal/g. Fats: ~9 kcal/g (38-39 kJ/g).
+Proteins: ~4 kcal/g (17 kJ/g).
+Carbohydrates: ~4 kcal/g (17 kJ/g).",
         kludaIevade: "Enter age, weight, height",
         kludaMakro: "Sum must be 100%. Now:",
         Olbaltumvielas: "Protein",
@@ -125,7 +127,9 @@ const translations = {
         formulaOlbaltumvieluG: "Olbaltumvielas g = Olb. kcal ÷ 4",
         formulaTaukuG: "Tauki g = Tauk. kcal ÷ 9",
         formulaOglhidratuG: "Ogļhidrāti g = Ogļh. kcal ÷ 4",
-        piezime: "Olbaltumvielas un ogļhidrāti = 4 kcal/g, tauki = 9 kcal/g.",
+        piezime: "Olbaltumvielas un ogļhidrāti = 4 kcal/g, tauki = 9 kcal/g. Tauki: ~9 kcal/g (38–39 kJ/g).
+Olbaltumvielas: ~4 kcal/g (17 kJ/g).
+Ogļhidrāti: ~4 kcal/g (17 kJ/g).",
         kludaIevade: "Ievadiet vecumu, svaru, garumu",
         kludaMakro: "Summai jābūt 100%. Tagad:",
         Olbaltumvielas: "Olbamtumvielas",
