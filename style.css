@@ -138,6 +138,8 @@ th,td {
 
     .pamats2 {
         grid-template-columns: 1fr;
+        height: 100vh;
+        width: 100vw;
     }
 
     input {
