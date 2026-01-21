@@ -131,16 +131,25 @@ th,td {
 }
 
 @media (max-width: 768px) {
+
+    .body {
+        min-height: 100vh;
+    }
+
     .pamats2 {
         grid-template-columns: 1fr;
     }
 
     input {
-        width: 90%;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
     }
     
     select {
         width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
     }
 
     .stats {
