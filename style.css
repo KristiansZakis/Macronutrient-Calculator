@@ -84,11 +84,6 @@ button:hover {
     background: #2bdc7b;
 }
 
-button[data-i18n="atiestatit"] {
-    background: #2a2f36;
-    margin-left: 10px;
-}
-
 .stats {
     display: flex;
     gap: 20px;
@@ -122,8 +117,7 @@ table {
     border-collapse: collapse;
 }
 
-th,
-td {
+th,td {
     padding: 10px;
     border-bottom: 1px solid #333;
     text-align: left;
@@ -140,15 +134,12 @@ td {
         grid-template-columns: 1fr;
     }
 
-    input,
+    input {
+        width: 85%;
+    }
+    
     select {
         width: 100%;
-    }
-
-    .button-row {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
     }
 
     .stats {
@@ -162,8 +153,7 @@ td {
         border-radius: 50%;
     }
 
-    table th,
-    table td {
+    table th, table td {
         font-size: 14px;
         padding: 8px;
     }
@@ -250,3 +240,4 @@ td {
 #sarkans {
     color: red;
 }
+
